@@ -1,3 +1,10 @@
+'''
+Original Simulator: https://github.com/akiani/rlsepsis234
+Original Authors: Amirhossein Kiani, Tianli Ding, Peter Henderson
+
+Sepsis management simulator.
+'''
+
 import os
 from collections import deque
 from random import randrange
@@ -19,8 +26,7 @@ NUM_ACTIONS = 24
 
 EPISODE_MEMORY = 10
 
-am_dir = "/home/amandyam/kdbirl/irl/uai/sepsis/"
-aj_dir = "./sepsis_model"
+dir = "./sepsis_model"
 
 
 features = [
@@ -87,7 +93,7 @@ class SepsisEnv(gym.Env):
 
     def __init__(self, starting_state=None, verbose=False):
         # module_path = os.path.dirname(__file__)
-        module_path = am_dir
+        module_path = dir
         self.verbose = verbose
         self.state_model = keras.models.load_model(
             os.path.join(module_path, STATE_MODEL)

@@ -1,12 +1,13 @@
+'''
+Gridworld environment to generate observations.
+'''
 import copy
 import random
 from typing import List, Tuple
-
 import gym
 import matplotlib.pyplot as plt
 import numpy as np
 from gym import spaces
-
 
 class Gridworld(gym.Env):
     def __init__(self, group, shared_weights=None, fg_weights=None, target_state=None, gridsize=4, nonlinear=False,
@@ -121,23 +122,7 @@ class Gridworld(gym.Env):
             render: bool = False,
             group: int = 1,
             random_start: bool = True,
-    ) -> List[Tuple[np.array, int, int, np.array, bool, int]]:
-        """
-        Generate rollout using given action selection function.
-        If a network is not given, generate random rollout instead.
-        Parameters
-        ----------
-        agent : NFQAgent
-                Greedy policy.
-        render: bool
-                If true, render environment.
-        Returns
-        -------
-        rollout : List of Tuple
-                Generated rollout.
-        episode_cost : float
-                Cumulative cost throughout the episode.
-        """
+    ):
         rollout = []
         episode_cost = 0
         if random_start:

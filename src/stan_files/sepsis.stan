@@ -26,7 +26,7 @@ transformed parameters { // calculate all the distance metrics.
     }
     likelihood += log(inner_sum);
   }
- //likelihood += normal_lpdf(sample_reward | 0.55, 0.3);
+ likelihood += normal_lpdf(sample_reward | 0, 1);
 }
 model {
   target += likelihood;
