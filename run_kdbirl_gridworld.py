@@ -147,5 +147,6 @@ reward_fn = [0]*25
 reward_fn[-1] = 1
 sample_kdbirl(n_iter=10000, n_posterior_samples=8000, gridsize=5, target_state=[4, 4], n=n, m=m, h=0.1, h_prime=0.4, step=True, reward_fn=reward_fn, save=True)
 
-# TODO: Fit the 10x10 Gridworld with a featurized reward function
+# Fit the 10x10 Gridworld with a featurized reward function
+
 
